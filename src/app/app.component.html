@@ -1,71 +1,46 @@
 <!-- Basic -->
+
 <!-- <p-dataTable [value]="cars">
-  <p-column field="make" header="Brand"></p-column>
+  <p-column field="brand" header="Brand"></p-column>
   <p-column field="model" header="Model"></p-column>
-  <p-column field="year" header="Year"></p-column>
-  <p-column field="color" header="Color"></p-column>
-  <p-column field="createdAt" header="Created"></p-column>
+  <p-column field="created" header="Created"></p-column>
 </p-dataTable> -->
 
-<!-- Sotrable -->
-<!-- <p-dataTable [value]="cars">
-  <p-column field="make" header="Brand" [sortable]="true"></p-column>
-  <p-column field="model" header="Model"></p-column>
-  <p-column field="year" header="Year"></p-column>
-  <p-column field="color" header="Color"></p-column>
-  <p-column field="createdAt" header="Created"></p-column>
-</p-dataTable> -->
+<!-- Advanced -->
 
-<!-- Search -->
-<!-- <p-dataTable [value]="cars">
-  <p-column field="make" header="Brand" [filter]="true"></p-column>
-  <p-column field="model" header="Model"></p-column>
-  <p-column field="year" header="Year"></p-column>
-  <p-column field="color" header="Color"></p-column>
-  <p-column field="createdAt" header="Created"></p-column>
-</p-dataTable> -->
-
-<!-- Pagination -->
-<!-- <p-dataTable [value]="cars" [rows]="10" [paginator]="true">
-  <p-column field="make" header="Brand"></p-column>
-  <p-column field="model" header="Model"></p-column>
-  <p-column field="year" header="Year"></p-column>
-  <p-column field="color" header="Color"></p-column>
-  <p-column field="createdAt" header="Created"></p-column>
+<!-- <p-dataTable [value]="cars" [paginator]="true" [rows]="10">
+  <p-column field="brand" header="Brand" [sortable]="true"></p-column>
+  <p-column field="model" header="Model" [filter]="true"></p-column>
+  <p-column field="created" header="Created"></p-column>
 </p-dataTable> -->
 
 <!-- Templating -->
+
 <p-dataTable [value]="cars">
   <p-column>
     <ng-template pTemplate="header">
       <span>Brand + Model</span>
     </ng-template>
     <ng-template let-car="rowData" pTemplate="body">
-      <span>{{car.make}} {{car.model}}</span>
+      <span>{{car.brand}} {{car.model}}</span>
     </ng-template>
   </p-column>
-  <p-column field="year" header="Year"></p-column>
-  <p-column field="color" header="Color">
+  <p-column field="created" header="Created">
     <ng-template let-col let-car="rowData" pTemplate="body">
-      <span [style.color]="car[col.field]">{{car[col.field]}}</span>
-    </ng-template>
-  </p-column>
-  <p-column field="createdAt" header="Created">
-    <ng-template let-col let-car="rowData" pTemplate="body">
-      <span>{{car.createdAt | date}}</span>
+      <span>{{car.created | date}}</span>
     </ng-template>
   </p-column>
 </p-dataTable>
 
 <!-- Works! O_O -->
 <!-- <p-dataTable [value]="cars">
-  <p-column field="make" header="Brand"></p-column>
+  <p-column field="brand" header="Brand"></p-column>
   <p-column field="model" header="Model"></p-column>
   <p-column field="year" header="Year"></p-column>
   <p-column field="color" header="Color"></p-column>
-  <p-column field="createdAt" header="Created" [sortable]="true" [filter]="true">
+  <p-column field="created" header="Created" [sortable]="true" [filter]="true">
     <ng-template let-col let-car="rowData" pTemplate="body">
-      <span>{{car.createdAt | date}}</span>
+      <span>{{car.created | date}}</span>
     </ng-template>
   </p-column>
 </p-dataTable> -->
